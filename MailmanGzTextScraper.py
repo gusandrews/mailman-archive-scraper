@@ -1,5 +1,5 @@
 import os
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 from MailmanArchiveScraper import MailmanArchiveScraper
 
 """
@@ -21,8 +21,7 @@ class MailmanGzTextScraper(MailmanArchiveScraper):
         filtered_source = self.filterPage(source)
         soup = BeautifulSoup(source)
 
-
-        for row in soup.first('table')('tr')[1:]:
+    	for row in soup.first('table')('tr')[1:]:
             rel_url = row('td')[2]('a')[0].get('href')
             source = self.fetchPage(self.list_url + '/' + rel_url)
 
