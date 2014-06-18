@@ -1,5 +1,5 @@
 import os
-from bs4 import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
 from MailmanArchiveScraper import MailmanArchiveScraper
 
 """

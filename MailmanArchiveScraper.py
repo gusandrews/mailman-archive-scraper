@@ -8,7 +8,7 @@
 * Hasn't had a huge amount of testing -- use with care.
 """
 import ClientForm, ConfigParser, datetime, email.utils, mechanize, os, PyRSS2Gen, re, sys, time, urlparse
-from bs4 import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
 
 
 class FullRSSItem(PyRSS2Gen.RSSItem):
@@ -314,7 +314,6 @@ class MailmanArchiveScraper(object):
         local_index.close()
         
         soup = BeautifulSoup(source)
-        print soup
         
         # Go through each row in the table except the first (which is column headers).
         for row in soup.first('table')('tr')[1:]:
